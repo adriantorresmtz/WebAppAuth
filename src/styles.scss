@@ -1,1 +1,50 @@
-/* You can add global styles to this file, and also import other style files */
+
+body {
+    background-image: url(./assets/back-100.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  }
+
+  .btn-warning{
+    background-color: orange ;
+    color: azure;
+    font-style: oblique;
+    font-size: large;
+  }
+
+  .container-main{
+    background-color: rgb(244, 255, 255);
+    min-height: 600px;
+    border-color: rgb(29, 29, 75);
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 10px;
+  }
+
+  .h1 {
+    text-align: center;
+    color: rgb(143 62 92);
+  }
+  .text-invalid{
+    border-color: red;
+    border-style: dotted;
+    background-color: rgb(241, 220, 241);
+  }
+
+
+
+.table-success {
+  --bs-table-bg: #6883a5;
+  --bs-table-striped-bg: #c7cddb;
+  --bs-table-striped-color: #000;
+  --bs-table-active-bg: #bcd0c7;
+  --bs-table-active-color: #000;
+  --bs-table-hover-bg: #c1d6cc;
+  --bs-table-hover-color: #000;
+  color: #000;
+  border-color: #bcd0c7;
+}

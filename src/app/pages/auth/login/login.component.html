@@ -1,0 +1,131 @@
+
+<!-- <section class="auth-form">
+    <div class="text-center">
+        <h3 class="h3">{{ options.label }}</h3>
+    </div>
+    <form [formGroup]="authForm" (ngSubmit)="onSubmit()" #LoginForm="ngForm" >
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Username</label>
+          <input formControlName="Username" type="text" class="form-control" id="Username" 
+            [class.is-invalid]=" LoginForm.submitted && authForm.get('Username')?.invalid" >
+          <div class="invalid-feedback" *ngIf="authForm.get('Username')?.hasError('required')">
+            Username is requiered
+          </div>
+          <div class="invalid-feedback" *ngIf="authForm.get('Username')?.hasError('minlength')">
+            Username at least 3 characrters
+          </div>
+
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input formControlName="Password" type="password" class="form-control" id="exampleInputPassword1"
+                [class.is-invalid]="LoginForm.submitted && authForm.get('Password')?.invalid" >
+        
+        <div class="invalid-feedback" *ngIf="authForm.get('Password')?.hasError('required')">
+            Password is requiered
+        </div>
+        <div class="invalid-feedback" *ngIf="authForm.get('Password')?.hasError('minlength')">
+            Password at least 3 characrters
+        </div>
+
+        </div>
+        <div class="d-grid">
+            <button type="submit" class="btn btn-warning">{{ options.label }}</button>
+        </div>      
+        <div class="text-center mt-5">
+            <ng-container *ngIf="IsSignIn; else showSignTemplate">
+                <a [routerLink]="['/sign-up']" class="text-form">Create new account</a>
+            </ng-container> 
+        </div>    
+    </form>
+
+    <ng-template  #showSignTemplate>
+        <a [routerLink]="['/sign-in']" class="text-form">
+            Already have an account? <small>Sign In here !</small>
+        </a>
+    </ng-template>
+
+</section>
+
+ -->
+    <div class="authentication-wrapper authentication-basic">
+      <div class="authentication-inner">
+        <!-- Register -->
+        <div class="card">
+          <div class="card-body">
+
+            <h4 class="h1">Welcome</h4>
+            <form [formGroup]="authForm" (ngSubmit)="onSubmit()" #LoginForm="ngForm" >
+
+              <div class="mb-3">
+                <label for="email" class="form-label">Username</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="email"
+                  name="email-username"
+                  formControlName="Username"
+                  placeholder="Enter your email or username"
+                  autofocus
+                  [class.is-invalid]=" LoginForm.submitted && authForm.get('Username')?.invalid"
+                />
+
+                <div class="invalid-feedback" *ngIf="authForm.get('Username')?.hasError('required')">
+                  Username is requiered
+                </div>
+                <div class="invalid-feedback" *ngIf="authForm.get('Username')?.hasError('minlength')">
+                  Username at least 3 characrters
+                </div>
+
+              </div>
+              <div class="mb-3 form-password-toggle">
+                <div class="d-flex justify-content-between">
+                  <label class="form-label" for="password">Password</label>
+                </div>
+                <div class="input-group input-group-merge">
+                  <input
+                    type="password"
+                    id="password"
+                    class="form-control"
+                    name="password"
+                    placeholder=""
+                    aria-describedby="password"
+                    formControlName="Password"
+                    [class.is-invalid]="LoginForm.submitted && authForm.get('Password')?.invalid" 
+                  />
+                  <div class="invalid-feedback" *ngIf="authForm.get('Password')?.hasError('required')">
+                    Password is requiered
+                  </div>
+                  <div class="invalid-feedback" *ngIf="authForm.get('Password')?.hasError('minlength')">
+                      Password at least 3 characrters
+                  </div>
+     
+                </div>
+              </div>  
+              <div class="mb-3">
+                <button class="btn btn-warning d-grid w-100 " type="submit">{{ options.label }}</button>
+              </div>
+            </form>
+
+            <div *ngIf="invalidLogin" class="alert alert-danger text-center" role="alert">
+              Incorrect Credentials
+            </div>
+ 
+            <div class="text-center mt-5">
+              <ng-container *ngIf="IsSignIn; else showSignTemplate">
+                  <a [routerLink]="['/sign-up']" >Create new account</a>
+              </ng-container> 
+          </div>  
+
+          </div>
+        </div>
+        <!-- /Register -->
+      </div>
+    </div>
+
+  <ng-template  #showSignTemplate>
+    <a [routerLink]="['/sign-in']">
+        Already have an account? <small>Sign In here !</small>
+    </a>
+</ng-template>
+
