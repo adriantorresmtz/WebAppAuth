@@ -1,5 +1,20 @@
+<div id="wrapper">
+
 <app-navbar *ngIf="authSrv.isLoggedIn$ | async"></app-navbar> 
  
-<div class="container mt-5">
-      <router-outlet></router-outlet>
+<div class="main">
+      <!-- MAIN CONTENT -->
+      <div class="main-content">
+            <div class="container-fluid">
+                  <router-outlet></router-outlet>
+            </div>
+      </div>
 </div>
+
+</div>
+<footer>
+      <div class="container-fluid">
+          <p class="copyright">&copy; 2022. All Rights Reserved.</p>
+      </div>
+  </footer>
+

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg nav-dark-100">
+<!-- <nav class="navbar navbar-expand-lg nav-dark-100">
     <div class="container-fluid">
       <a class="navbar-brand nav-dark-100" [routerLink]="['/home']">WebApp Auth</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,7 +13,6 @@
             <a class="nav-link nav-dark-100" [routerLink]="['/movies']">Students</a>
           </li>
         </ul>
-        <!-- right bottons-->    
         <ul class="navbar-nav ms-auto">
             <li class="nav-item">
                 <div *ngIf="userModel"  class="display-user"> {{ userModel.givenName  }}</div>
@@ -22,4 +21,55 @@
         </ul>
       </div>
     </div>
-  </nav>
+  </nav> -->
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="brand">
+        <!-- <a href="index.html"><img src="assets/img/logo-dark.png" alt="Klorofil Logo" class="img-responsive logo"> APPLET</a> -->
+        <a class="app-logo" href="#"><img class="logo-icon me-2" src="assets/img/logo-dark.png" alt="logo"><span class="logo-text">APPET</span></a>
+    </div>
+    <div class="container-fluid">
+        <div class="navbar-btn">
+            <button type="button" class="btn-toggle-fullwidth"><i class="lnr lnr-arrow-left-circle"></i></button>
+        </div>
+
+
+        <div id="navbar-menu">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ userModel.givenName  }}<i class="icon-submenu lnr lnr-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <!-- <li><a href="#"><i class="lnr lnr-user"></i> <span>My Profile</span></a></li>
+                        <li><a href="#"><i class="lnr lnr-envelope"></i> <span>Message</span></a></li>
+                        <li><a href="#"><i class="lnr lnr-cog"></i> <span>Settings</span></a></li> -->
+                        <li><a href="#" (click)="onLogout();"><i class="fa-solid fa-close"></i> <span>Logout</span></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- END NAVBAR -->
+
+<!-- LEFT SIDEBAR -->
+<div id="sidebar-nav" class="sidebar">
+    <div class="sidebar-scroll">
+        <nav>
+            <ul class="nav">
+                <li><a [routerLink]="['/home']" class="active"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
+                <li><a [routerLink]="['/movies']" class=""><i class="lnr lnr-chart-bars"></i> <span>Movies</span></a></li>
+                <li>
+                    <a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>User</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+                    <div id="subPages" class="collapse ">
+                        <ul class="nav">
+                            <li><a href="#" class="">Profile</a></li>
+                            <li><a href="#" class="">Login</a></li>
+                            <li><a href="#" class="">Lockscreen</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+<!-- END LEFT SIDEBAR -->
