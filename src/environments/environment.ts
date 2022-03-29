@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   authProvider:{
-    url: 'https://jwtauthatm.azurewebsites.net'
+    url: 'https://atmjwt.azurewebsites.net'
   }
 };
 
